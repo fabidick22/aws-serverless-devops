@@ -27,6 +27,8 @@ Globals:
 Resources:
   ServerlessHTTPApi:
     Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: !Sub "${Environment}"
 
   HelloWorldFunction:
     Type: AWS::Serverless::Function
@@ -45,7 +47,11 @@ Resources:
 Outputs:
   HelloWorldApi:
     Description: "API Gateway endpoint URL for Prod stage for Hello World function"
-    Value: !Sub "https://${ServerlessHTTPApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
+    Value: !Join
+      - ''
+      - - !Sub "https://${ServerlessHTTPApi}.execute-api.${AWS::Region}.amazonaws.com/"
+        - !If [ProdCondition, "prod", "stage"]
+
   HelloWorldFunction:
     Description: "Hello World Lambda Function ARN"
     Value: !GetAtt HelloWorldFunction.Arn
