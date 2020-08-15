@@ -10,11 +10,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
+      - name: Install AWS SAM
+        run: pip install aws-sam-cli
+
       - name: AWS SAM Validation
-        uses: youyo/aws-sam-action/python3.8@master
-        with:
-          sam_command: validate
-#        env:
-#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+        run: sam validate
