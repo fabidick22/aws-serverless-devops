@@ -1,0 +1,8 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-b5rkcqqppiqc"
+region = "us-east-2"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"

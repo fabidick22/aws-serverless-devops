@@ -1,0 +1,60 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  DevOps
+
+  Sample SAM Template for aws-serverless-devops
+
+
+Parameters:
+  Environment:
+    Type: String
+    AllowedValues:
+      - stage
+      - prod
+
+Conditions:
+  ProdCondition:
+    !Equals [!Ref Environment, prod]
+
+Globals:
+  Function:
+    Runtime: nodejs12.x
+    Tracing: Active
+    MemorySize: 128
+    Timeout: 100
+
+Resources:
+  ServerlessHTTPApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: !Sub "${Environment}"
+
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "${AWS::StackName}-helloWorldFunction"
+      CodeUri: src/handlers/hello-world/
+      Handler: app.lambdaHandler
+      Events:
+        HelloWorld:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ServerlessHTTPApi
+            Path: /hello
+            Method: get
+
+Outputs:
+  HelloWorldApi:
+    Description: "API Gateway endpoint URL for Prod stage for Hello World function"
+    Value: !Join
+      - ''
+      - - !Sub "https://${ServerlessHTTPApi}.execute-api.${AWS::Region}.amazonaws.com/"
+        - !If [ProdCondition, "prod", "stage"]
+
+  HelloWorldFunction:
+    Description: "Hello World Lambda Function ARN"
+    Value: !GetAtt HelloWorldFunction.Arn
+  HelloWorldFunctionIamRole:
+    Description: "Implicit IAM Role created for Hello World function"
+    Value: !GetAtt HelloWorldFunctionRole.Arn
