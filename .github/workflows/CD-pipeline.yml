@@ -104,11 +104,6 @@ jobs:
           STACK_NAME: ${{ env.STACK_NAME }}
           ENVIRONMENT: ${{ env.ENVIRONMENT }}
 
-      - name: Comment message
-        run: echo ${{ env.COMMENT }}
-
-
-
       - name: Slack Notification
         if: steps.build_package.outputs.released == 'true'
         uses: rtCamp/action-slack-notify@v2.0.2
