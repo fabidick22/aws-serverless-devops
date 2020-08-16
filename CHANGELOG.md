@@ -1,3 +1,13 @@
+# [1.0.0-beta.2](https://github.com/fabidick22/aws-serverless-devops/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2020-08-16)
+
+### Bug Fixes
+
+- remove comment message ([8601945](https://github.com/fabidick22/aws-serverless-devops/commit/8601945381e5849d6f6f4313741bde03606d82e4))
+
+### Other
+
+- Fix CD process ([d000ef2](https://github.com/fabidick22/aws-serverless-devops/commit/d000ef29efb0b116c9f680afe91ae5ab24c29cb1))
+
 # 1.0.0-beta.1 (2020-08-16)
 
 ### Bug Fixes
