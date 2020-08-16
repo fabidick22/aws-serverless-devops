@@ -1,0 +1,131 @@
+name: "CD Process"
+#on: [push]
+on:
+  push:
+    branches:
+      - master
+      - develop
+
+jobs:
+  aws_sam:
+    runs-on: ubuntu-latest
+    env:
+      ENVIRONMENT: "stage"
+      DEPLOY_COMMAND: "deploy"
+      COMMENT: "Nothing to say.."
+      BASE_NAME: "serverless-api"
+      STACK_NAME: ""
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Release
+        id: build_package
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        uses: ridedott/release-me-action@master
+        with:
+          release-branches: '["master",{"name":"develop","prerelease":"beta"}]'
+
+      - name: Build Command to Deploy
+        run: |
+          environment="stage"
+          if [[ "${GITHUB_REF##*/}" == "master" ]]; then
+            environment="prod"
+          fi
+          stack_name=${APP_NAME}-${environment}
+          command="deploy --no-fail-on-empty-changeset --no-confirm-changeset --stack-name ${stack_name} --s3-prefix ${APP_NAME}-${environment} --parameter-overrides ParameterKey=Environment,ParameterValue=${environment}"
+          echo ::set-env name=ENVIRONMENT::$(echo $environment)
+          echo ::set-env name=DEPLOY_COMMAND::$(echo $command)
+          echo ::set-env name=STACK_NAME::$(echo ${stack_name})
+        env:
+          APP_NAME: '${{ env.BASE_NAME }}'
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Configure AWS credentials
+        if: steps.build_package.outputs.released == 'true'
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+
+      - name: Install AWS SAM
+        if: steps.build_package.outputs.released == 'true'
+        run: pip install aws-sam-cli
+
+      - name: sam build
+        if: steps.build_package.outputs.released == 'true'
+        run: sam build --parameter-overrides ParameterKey=Environment,ParameterValue=${{ env.ENVIRONMENT }}
+
+      - name: sam deploy
+        if: steps.build_package.outputs.released == 'true'
+        run: 'sam ${{ env.DEPLOY_COMMAND }}'
+
+      - name: Get CF Outputs
+        id: urls
+        run: |
+          outputs=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" | jq -cr '.Stacks[0].Outputs')
+          if [[ $outputs != null ]] ; then
+              echo "$outputs" | jq -c '.[]' | while read -r line; do
+                  key=$(echo "$line" | jq -r '.OutputKey')
+                  value=$(echo "$line" | jq -r '.OutputValue')
+                  echo "::set-output name=cf_output_$key::$value"
+              done
+          fi
+        env:
+          STACK_NAME: ${{ env.STACK_NAME}}
+
+      - name: Opening pull request
+        if: github.ref == 'refs/heads/master' && steps.build_package.outputs.released == 'true'
+        id: pull
+        uses: tretuna/sync-branches@1.2.0
+        with:
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
+          FROM_BRANCH: "master"
+          TO_BRANCH: "develop"
+
+      - name: Build Notification
+        run: |
+          message="There are no relevant changes"
+          if [[ "${{ steps.build_package.outputs.released }}" == "true" ]]; then
+              message="*Release notes:* <$RELEASE_URL|${{ steps.build_package.outputs.version }}>  "
+              message+="*API URL:* <$API_URL|Provider API ($ENVIRONMENT)> "
+          fi
+          echo ::set-env name=COMMENT::$(echo $message)
+        env:
+          API_URL: '${{ steps.urls.outputs.cf_output_HelloWorldApi }}'
+          RELEASE_URL: 'https://github.com/${{ github.repository }}/releases/tag/v${{ steps.build_package.outputs.version }}'
+          STACK_NAME: ${{ env.STACK_NAME }}
+          ENVIRONMENT: ${{ env.ENVIRONMENT }}
+
+      - name: Comment message
+        run: echo ${{ env.COMMENT }}
+
+
+
+      - name: Slack Notification
+        if: steps.build_package.outputs.released == 'true'
+        uses: rtCamp/action-slack-notify@v2.0.2
+        env:
+          SLACK_COLOR: '#06E81D'
+          SLACK_TITLE: 'Release details (*${{ env.STACK_NAME }}*) :rocket: :computer:'
+          SLACK_MESSAGE: ${{ env.COMMENT }}
+          SLACK_USERNAME: bazt-bot
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
+      - name: Slack Notification Sync PR
+        if: github.ref == 'refs/heads/master' && steps.build_package.outputs.released == 'true'
+        uses: rtCamp/action-slack-notify@v2.0.2
+        env:
+          SLACK_COLOR: '#FFBF00'
+          SLACK_TITLE: 'Sync PR (*${{ env.STACK_NAME }}*) :repeat:'
+          SLACK_MESSAGE: "Let's merge this ASAP: https://github.com/${{ github.repository }}/pull/${{ steps.pull.outputs.PULL_REQUEST_NUMBER }}"
+          SLACK_USERNAME: bazt-bot
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          MSG_MINIMAL: true
