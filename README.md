@@ -11,11 +11,17 @@ This repository is a base project to create a REST API in a serverless architect
 - AWS lambda with nodejs12.x 
 
 ## TODO
+- Add Rollback support
 - Add feature toggles support
 - Add OpenAPI Specification (OAS)
 - Add contract-first development style
 
+## Architecture
+### Diagram
+Here my diagram :)
+
 ## CI/CD Pipeline
+
 ### GitHub-Actions Secrets
 You have to set up the following secrets for the pipeline to work as expected.
 - `AWS_ACCESS_KEY_ID`
