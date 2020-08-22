@@ -16,4 +16,13 @@ This repository is a base project to create a REST API in a serverless architect
 - Add contract-first development style
 
 ## CI/CD Pipeline
+### GitHub-Actions Secrets
+You have to set up the following secrets for the pipeline to work as expected.
+- `AWS_ACCESS_KEY_ID`
+- `AWS_DEFAULT_REGION`
+- `AWS_SECRET_ACCESS_KEY`
+- `GH_TOKEN`
+- `SLACK_WEBHOOK`
+
+### Flow
 ![DevOps Pipeline](https://raw.githubusercontent.com/fabidick22/aws-serverless-devops/master/.docs/images/devops.png)
