@@ -95,7 +95,7 @@ jobs:
           message="There are no relevant changes"
           if [[ "${{ steps.build_package.outputs.released }}" == "true" ]]; then
               message="*Release notes:* <$RELEASE_URL|${{ steps.build_package.outputs.version }}>  "
-              message+="*API URL:* <$API_URL|Provider API ($ENVIRONMENT)> "
+              message+="*API URL:* <$API_URL|MY API ($ENVIRONMENT)> "
           fi
           echo ::set-env name=COMMENT::$(echo $message)
         env:
