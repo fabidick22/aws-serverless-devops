@@ -30,31 +30,38 @@ Resources:
     Properties:
       StageName: !Sub "${Environment}"
 
-  HelloWorldFunction:
+  GetMyDataFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub "${AWS::StackName}-helloWorldFunction"
-      CodeUri: src/handlers/hello-world/
+      FunctionName: !Sub "${AWS::StackName}-getMyDataFunction"
+      CodeUri: src/handlers/get-data/
       Handler: app.lambdaHandler
       Events:
         HelloWorld:
           Type: HttpApi
           Properties:
             ApiId: !Ref ServerlessHTTPApi
-            Path: /hello
+            Path: /data
             Method: get
 
+  SaveMyDataFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "${AWS::StackName}-getMyDataFunction"
+      CodeUri: src/handlers/save-data/
+      Handler: app.lambdaHandler
+      Events:
+        HelloWorld:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ServerlessHTTPApi
+            Path: /data
+            Method: post
+
 Outputs:
-  HelloWorldApi:
+  DataApi:
     Description: "API Gateway endpoint URL for Prod stage for Hello World function"
     Value: !Join
       - ''
       - - !Sub "https://${ServerlessHTTPApi}.execute-api.${AWS::Region}.amazonaws.com/"
         - !If [ProdCondition, "prod", "stage"]
-
-  HelloWorldFunction:
-    Description: "Hello World Lambda Function ARN"
-    Value: !GetAtt HelloWorldFunction.Arn
-  HelloWorldFunctionIamRole:
-    Description: "Implicit IAM Role created for Hello World function"
-    Value: !GetAtt HelloWorldFunctionRole.Arn
