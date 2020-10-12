@@ -1,3 +1,10 @@
+# [1.1.0-beta.3](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.2...v1.1.0-beta.3) (2020-10-12)
+
+### Bug Fixes
+
+- Set up python3 (CI process) ([9f56258](https://github.com/fabidick22/aws-serverless-devops/commit/9f56258454d69d94936de7d3a28ec5af634aca6f))
+- Set up python3 (CI process) ([0e5d52f](https://github.com/fabidick22/aws-serverless-devops/commit/0e5d52fa8163c47557a1de0a2007cd6255b0c7aa))
+
 # [1.1.0-beta.2](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2020-10-12)
 
 ### Bug Fixes
