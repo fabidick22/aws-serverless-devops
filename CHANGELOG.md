@@ -1,3 +1,10 @@
+# [1.1.0-beta.2](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2020-10-12)
+
+### Bug Fixes
+
+- The command is deprecated ([3e9e712](https://github.com/fabidick22/aws-serverless-devops/commit/3e9e712b09f77a93a1c9f62c273a35abddac2f5d))
+- The set-env command is deprecated ([936ea72](https://github.com/fabidick22/aws-serverless-devops/commit/936ea7293b72c397fa9e86e40bfa253192885c2d))
+
 # [1.1.0-beta.1](https://github.com/fabidick22/aws-serverless-devops/compare/v1.0.0...v1.1.0-beta.1) (2020-10-12)
 
 ### Bug Fixes
