@@ -1,3 +1,23 @@
+# [1.1.0-beta.1](https://github.com/fabidick22/aws-serverless-devops/compare/v1.0.0...v1.1.0-beta.1) (2020-10-12)
+
+### Bug Fixes
+
+- Set up python3 (CI process) ([7338947](https://github.com/fabidick22/aws-serverless-devops/commit/733894724c39068470bd566ad252e1ef6dd3ed5a))
+
+### Code Refactoring
+
+- Rename hello-world function ([2865427](https://github.com/fabidick22/aws-serverless-devops/commit/2865427bf30d58d8475e7dddd8abf3cca36a9c40))
+
+### Features
+
+- Add new endpoint (save-data) ([86f2603](https://github.com/fabidick22/aws-serverless-devops/commit/86f2603319dbc22870a29cbd5cca5f8844eed181))
+- update get-data response ([988efda](https://github.com/fabidick22/aws-serverless-devops/commit/988efda3f534b5fa00636e20346d931eb9c38745))
+
+### Other
+
+- Update API Gateway (new endopoint) ([07525d8](https://github.com/fabidick22/aws-serverless-devops/commit/07525d8ba606e49e829930a430d5b55bbe665d24))
+- master to develop ([b1e9c47](https://github.com/fabidick22/aws-serverless-devops/commit/b1e9c47403030e51aa0d26e24b9cb8f66db21f19))
+
 # 1.0.0 (2020-08-16)
 
 ### Bug Fixes
