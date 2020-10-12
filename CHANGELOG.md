@@ -1,3 +1,10 @@
+# [1.1.0-beta.4](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.3...v1.1.0-beta.4) (2020-10-12)
+
+### Code Refactoring
+
+- Update slack action ([0654d9c](https://github.com/fabidick22/aws-serverless-devops/commit/0654d9c1b3fe1008312005b25ef71a3e41e031a7))
+- Update slack action ([f33e18b](https://github.com/fabidick22/aws-serverless-devops/commit/f33e18bc504b86ecfdcbc7cc6a79295e34016b1d))
+
 # [1.1.0-beta.3](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.2...v1.1.0-beta.3) (2020-10-12)
 
 ### Bug Fixes
