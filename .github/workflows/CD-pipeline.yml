@@ -36,9 +36,9 @@ jobs:
           fi
           stack_name=${APP_NAME}-${environment}
           command="deploy --no-fail-on-empty-changeset --no-confirm-changeset --stack-name ${stack_name} --s3-prefix ${APP_NAME}-${environment} --parameter-overrides ParameterKey=Environment,ParameterValue=${environment}"
-          echo ::set-env name=ENVIRONMENT::$(echo $environment)
-          echo ::set-env name=DEPLOY_COMMAND::$(echo $command)
-          echo ::set-env name=STACK_NAME::$(echo ${stack_name})
+          echo ENVIRONMENT=$(echo $environment) >> $GITHUB_ENV
+          echo DEPLOY_COMMAND=$(echo $command) >> $GITHUB_ENV
+          echo STACK_NAME=$(echo ${stack_name}) >> $GITHUB_ENV
         env:
           APP_NAME: '${{ env.BASE_NAME }}'
 
@@ -97,7 +97,7 @@ jobs:
               message="*Release notes:* <$RELEASE_URL|${{ steps.build_package.outputs.version }}>  "
               message+="*API URL:* <$API_URL|Provider API ($ENVIRONMENT)> "
           fi
-          echo ::set-env name=COMMENT::$(echo $message)
+          echo COMMENT=$(echo $message) >> $GITHUB_ENV
         env:
           API_URL: '${{ steps.urls.outputs.cf_output_HelloWorldApi }}'
           RELEASE_URL: 'https://github.com/${{ github.repository }}/releases/tag/v${{ steps.build_package.outputs.version }}'
