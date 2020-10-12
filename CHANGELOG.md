@@ -1,3 +1,10 @@
+# [1.1.0-beta.5](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.4...v1.1.0-beta.5) (2020-10-12)
+
+### Features
+
+- Update region ([ccc747b](https://github.com/fabidick22/aws-serverless-devops/commit/ccc747b807fbb2e13fa626fed55f92bfbdb58c08))
+- Update region ([6dd61ff](https://github.com/fabidick22/aws-serverless-devops/commit/6dd61ff057bc2d877285f4c8aa6ff0d740d60417))
+
 # [1.1.0-beta.4](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.3...v1.1.0-beta.4) (2020-10-12)
 
 ### Code Refactoring
