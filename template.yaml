@@ -47,7 +47,7 @@ Resources:
   SaveMyDataFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub "${AWS::StackName}-getMyDataFunction"
+      FunctionName: !Sub "${AWS::StackName}-saveMyDataFunction"
       CodeUri: src/handlers/save-data/
       Handler: app.lambdaHandler
       Events:
