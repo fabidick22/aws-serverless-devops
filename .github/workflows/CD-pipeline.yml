@@ -125,6 +125,6 @@ jobs:
           SLACK_COLOR: '#FFBF00'
           SLACK_TITLE: 'Sync PR (*${{ env.STACK_NAME }}*) :repeat:'
           SLACK_MESSAGE: "Let's merge this ASAP: https://github.com/${{ github.repository }}/pull/${{ steps.pull.outputs.PULL_REQUEST_NUMBER }}"
-          SLACK_USERNAME: bazt-bot
+          SLACK_USERNAME: devops-bot
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           MSG_MINIMAL: true
