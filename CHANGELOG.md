@@ -1,3 +1,10 @@
+# [1.1.0-beta.6](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.5...v1.1.0-beta.6) (2020-10-12)
+
+### Bug Fixes
+
+- duplicate lambda function ([bc3e319](https://github.com/fabidick22/aws-serverless-devops/commit/bc3e31949199c314cbfa729e4d037443957b8fcb))
+- duplicate lambda function ([3822a92](https://github.com/fabidick22/aws-serverless-devops/commit/3822a926a86d9e57bb69d802463a5dcfb29643e7))
+
 # [1.1.0-beta.5](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.4...v1.1.0-beta.5) (2020-10-12)
 
 ### Features
