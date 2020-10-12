@@ -1,3 +1,10 @@
+# [1.1.0-beta.8](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.7...v1.1.0-beta.8) (2020-10-12)
+
+### Features
+
+- Update bucket region ([3e0b132](https://github.com/fabidick22/aws-serverless-devops/commit/3e0b132fa1aedc733a71ae64febc1ef84e64a498))
+- Update bucket region ([04ef385](https://github.com/fabidick22/aws-serverless-devops/commit/04ef3856818cca32954defa76bb798f339cf0996))
+
 # [1.1.0-beta.7](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.6...v1.1.0-beta.7) (2020-10-12)
 
 ### Documentation
