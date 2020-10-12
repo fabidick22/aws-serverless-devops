@@ -1,3 +1,10 @@
+# [1.1.0-beta.9](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.8...v1.1.0-beta.9) (2020-10-12)
+
+### Bug Fixes
+
+- Update outputs name ([952e632](https://github.com/fabidick22/aws-serverless-devops/commit/952e63226d546d6e7270daee883f0fa4faa2f965))
+- Update outputs name ([0988051](https://github.com/fabidick22/aws-serverless-devops/commit/09880512bfc3098fbf70ad624bff50752e5a67c9))
+
 # [1.1.0-beta.8](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.7...v1.1.0-beta.8) (2020-10-12)
 
 ### Features
