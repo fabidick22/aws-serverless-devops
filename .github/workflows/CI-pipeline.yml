@@ -3,6 +3,21 @@ name: "CI Process"
 on: [push]
 
 jobs:
+  unit_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Run unit testing
+        run: |
+          cd src/handlers
+          for lambda in */; do
+            cd "$lambda"
+            echo "\nUNIT TEST: $lambda"
+            npm install && npm test
+            cd ..
+          done
 
   aws_sam:
     runs-on: ubuntu-latest
