@@ -2,7 +2,8 @@
 let response;
 
 exports.lambdaHandler = async (event, context) => {
-    console.info(JSON.parse(context))
+    console.info(event)
+    console.info(context)
     try {
         response = {
             'statusCode': 200,
