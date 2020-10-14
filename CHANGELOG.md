@@ -1,3 +1,10 @@
+# [1.2.0-beta.4](https://github.com/fabidick22/aws-serverless-devops/compare/v1.2.0-beta.3...v1.2.0-beta.4) (2020-10-14)
+
+### Features
+
+- update response (get-data) ([c877d9f](https://github.com/fabidick22/aws-serverless-devops/commit/c877d9ffae9de46e1489ffbe8d9cd4fb8fb2b002))
+- update response (get-data) ([2888a42](https://github.com/fabidick22/aws-serverless-devops/commit/2888a421341fc509bf5268cd93402fa489180179))
+
 # [1.2.0-beta.3](https://github.com/fabidick22/aws-serverless-devops/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2020-10-14)
 
 ### Features
