@@ -2,7 +2,6 @@
 let response;
 
 exports.lambdaHandler = async (event, context) => {
-    const body = JSON.parse(event.body)
     console.info(JSON.parse(context))
     try {
         response = {
