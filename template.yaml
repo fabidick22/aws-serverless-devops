@@ -1,9 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  DevOps
-
-  Sample SAM Template for aws-serverless-devops
+  DevOps SAM Template for aws-serverless-devops
 
 
 Parameters:
@@ -30,31 +28,55 @@ Resources:
     Properties:
       StageName: !Sub "${Environment}"
 
-  HelloWorldFunction:
+  GetMyDataFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub "${AWS::StackName}-helloWorldFunction"
-      CodeUri: src/handlers/hello-world/
+      FunctionName: !Sub "${AWS::StackName}-getMyDataFunction"
+      CodeUri: src/handlers/get-data/
       Handler: app.lambdaHandler
       Events:
         HelloWorld:
           Type: HttpApi
           Properties:
             ApiId: !Ref ServerlessHTTPApi
-            Path: /hello
+            Path: /data
             Method: get
 
+  SaveMyDataFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "${AWS::StackName}-saveMyDataFunction"
+      CodeUri: src/handlers/save-data/
+      Handler: app.lambdaHandler
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref MySimpleTableDB
+      Environment:
+        Variables:
+          DATA_TABLE: !Ref MySimpleTableDB
+      Events:
+        HelloWorld:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ServerlessHTTPApi
+            Path: /data
+            Method: post
+
+  MySimpleTableDB:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: !Sub "my-data-${Environment}"
+      PrimaryKey:
+        Name: id
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 2
+        WriteCapacityUnits: 2
+
 Outputs:
-  HelloWorldApi:
+  DataApi:
     Description: "API Gateway endpoint URL for Prod stage for Hello World function"
     Value: !Join
       - ''
       - - !Sub "https://${ServerlessHTTPApi}.execute-api.${AWS::Region}.amazonaws.com/"
         - !If [ProdCondition, "prod", "stage"]
-
-  HelloWorldFunction:
-    Description: "Hello World Lambda Function ARN"
-    Value: !GetAtt HelloWorldFunction.Arn
-  HelloWorldFunctionIamRole:
-    Description: "Implicit IAM Role created for Hello World function"
-    Value: !GetAtt HelloWorldFunctionRole.Arn
