@@ -1,3 +1,67 @@
+# [1.1.0](https://github.com/fabidick22/aws-serverless-devops/compare/v1.0.0...v1.1.0) (2020-10-14)
+
+### Bug Fixes
+
+- add devDependencies ([ae86b97](https://github.com/fabidick22/aws-serverless-devops/commit/ae86b97df00f5685bf1f0c1a9751f83ef8aafe60))
+- bypass unit test (comment) ([8f1db57](https://github.com/fabidick22/aws-serverless-devops/commit/8f1db57a4dbd50fd220edb651bed12922a24412e))
+- bypass unit test (save-data) ([95986b5](https://github.com/fabidick22/aws-serverless-devops/commit/95986b5562c62632cb15d1d140bc3da0b6d40e60))
+- duplicate lambda function ([bc3e319](https://github.com/fabidick22/aws-serverless-devops/commit/bc3e31949199c314cbfa729e4d037443957b8fcb))
+- duplicate lambda function ([3822a92](https://github.com/fabidick22/aws-serverless-devops/commit/3822a926a86d9e57bb69d802463a5dcfb29643e7))
+- remove bad condition ([f5ea019](https://github.com/fabidick22/aws-serverless-devops/commit/f5ea019e7601025d944762b4ec341a60bdb984fc))
+- remove bad condition ([80d4c10](https://github.com/fabidick22/aws-serverless-devops/commit/80d4c101dcb7f9f010b7498976748432e904ba09))
+- Set up python3 (CI process) ([9f56258](https://github.com/fabidick22/aws-serverless-devops/commit/9f56258454d69d94936de7d3a28ec5af634aca6f))
+- Set up python3 (CI process) ([0e5d52f](https://github.com/fabidick22/aws-serverless-devops/commit/0e5d52fa8163c47557a1de0a2007cd6255b0c7aa))
+- Set up python3 (CI process) ([7338947](https://github.com/fabidick22/aws-serverless-devops/commit/733894724c39068470bd566ad252e1ef6dd3ed5a))
+- The command is deprecated ([3e9e712](https://github.com/fabidick22/aws-serverless-devops/commit/3e9e712b09f77a93a1c9f62c273a35abddac2f5d))
+- The set-env command is deprecated ([936ea72](https://github.com/fabidick22/aws-serverless-devops/commit/936ea7293b72c397fa9e86e40bfa253192885c2d))
+- Update outputs name ([952e632](https://github.com/fabidick22/aws-serverless-devops/commit/952e63226d546d6e7270daee883f0fa4faa2f965))
+- Update outputs name ([0988051](https://github.com/fabidick22/aws-serverless-devops/commit/09880512bfc3098fbf70ad624bff50752e5a67c9))
+- update unit test ([854a305](https://github.com/fabidick22/aws-serverless-devops/commit/854a305d71f0d47e7bb8c96fb24646b5b684660f))
+
+### Chores
+
+- **release:** v1.1.0-beta.1 ([0da5235](https://github.com/fabidick22/aws-serverless-devops/commit/0da52352fa6ccde6fa0424a9db009af917b4e7d0))
+- **release:** v1.1.0-beta.10 ([73b72c9](https://github.com/fabidick22/aws-serverless-devops/commit/73b72c9ff9c815fc6c317f3a5cd0bce459b5a040))
+- **release:** v1.1.0-beta.11 ([d1bb0c0](https://github.com/fabidick22/aws-serverless-devops/commit/d1bb0c0480be0431409e1d8dc17a787039f3f201))
+- **release:** v1.1.0-beta.12 ([7ccfba7](https://github.com/fabidick22/aws-serverless-devops/commit/7ccfba7c9eebb8e92466b20c0c44a54512f1cce2))
+- **release:** v1.1.0-beta.2 ([5558e49](https://github.com/fabidick22/aws-serverless-devops/commit/5558e49fa95c3d6271e6c18af749350419fb01c7))
+- **release:** v1.1.0-beta.3 ([4ad8086](https://github.com/fabidick22/aws-serverless-devops/commit/4ad8086f36ca78763cb14a7f283b4d0de8af8b55))
+- **release:** v1.1.0-beta.4 ([c971cb6](https://github.com/fabidick22/aws-serverless-devops/commit/c971cb623e0fd405bbc1e891a676b2adf888dbcb))
+- **release:** v1.1.0-beta.5 ([21dde19](https://github.com/fabidick22/aws-serverless-devops/commit/21dde19801cade5bbee5ae9b57d7213bf7805461))
+- **release:** v1.1.0-beta.6 ([c006f97](https://github.com/fabidick22/aws-serverless-devops/commit/c006f9744fb4ebb1dd7bb80bd41f6314d7c86608))
+- **release:** v1.1.0-beta.7 ([225694e](https://github.com/fabidick22/aws-serverless-devops/commit/225694e25471a537bfb84aab9c0aeca06ee7687e))
+- **release:** v1.1.0-beta.8 ([30786be](https://github.com/fabidick22/aws-serverless-devops/commit/30786be0ebb1c44ae989eae54e152f57cf42d06d))
+- **release:** v1.1.0-beta.9 ([5d85586](https://github.com/fabidick22/aws-serverless-devops/commit/5d85586fad33b16b9f86d28c6bc3ede8bd58445d))
+
+### Code Refactoring
+
+- Rename hello-world function ([2865427](https://github.com/fabidick22/aws-serverless-devops/commit/2865427bf30d58d8475e7dddd8abf3cca36a9c40))
+- Update slack action ([0654d9c](https://github.com/fabidick22/aws-serverless-devops/commit/0654d9c1b3fe1008312005b25ef71a3e41e031a7))
+- Update slack action ([f33e18b](https://github.com/fabidick22/aws-serverless-devops/commit/f33e18bc504b86ecfdcbc7cc6a79295e34016b1d))
+
+### Documentation
+
+- Update documentation ([ba64688](https://github.com/fabidick22/aws-serverless-devops/commit/ba64688ef0f6aabd15d7960b0953d6a47742157c))
+- Update documentation ([71460d2](https://github.com/fabidick22/aws-serverless-devops/commit/71460d2c60e9439f7bf6bfa56e22614a18ccf6ad))
+
+### Features
+
+- Add new endpoint (save-data) ([86f2603](https://github.com/fabidick22/aws-serverless-devops/commit/86f2603319dbc22870a29cbd5cca5f8844eed181))
+- Update bucket region ([3e0b132](https://github.com/fabidick22/aws-serverless-devops/commit/3e0b132fa1aedc733a71ae64febc1ef84e64a498))
+- Update bucket region ([04ef385](https://github.com/fabidick22/aws-serverless-devops/commit/04ef3856818cca32954defa76bb798f339cf0996))
+- update get-data response ([988efda](https://github.com/fabidick22/aws-serverless-devops/commit/988efda3f534b5fa00636e20346d931eb9c38745))
+- Update region ([ccc747b](https://github.com/fabidick22/aws-serverless-devops/commit/ccc747b807fbb2e13fa626fed55f92bfbdb58c08))
+- Update region ([6dd61ff](https://github.com/fabidick22/aws-serverless-devops/commit/6dd61ff057bc2d877285f4c8aa6ff0d740d60417))
+- Update save-data function ([cbe2fc3](https://github.com/fabidick22/aws-serverless-devops/commit/cbe2fc3ce352e7b04b8abd08b40bb5187bb751b1))
+- Update save-data function ([7c5381d](https://github.com/fabidick22/aws-serverless-devops/commit/7c5381d171ba312a4367c07d31dc0c73ddd5f1c1))
+
+### Other
+
+- deploy to prod environment ([e912656](https://github.com/fabidick22/aws-serverless-devops/commit/e91265633592c56b0a0a642faef134da0c51d3af))
+- Fix unit test ([6cad407](https://github.com/fabidick22/aws-serverless-devops/commit/6cad407260022eec961f35aac370b17cd5fa935a))
+- Update API Gateway (new endopoint) ([07525d8](https://github.com/fabidick22/aws-serverless-devops/commit/07525d8ba606e49e829930a430d5b55bbe665d24))
+- master to develop ([b1e9c47](https://github.com/fabidick22/aws-serverless-devops/commit/b1e9c47403030e51aa0d26e24b9cb8f66db21f19))
+
 # [1.1.0-beta.12](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.11...v1.1.0-beta.12) (2020-10-14)
 
 ### Bug Fixes
