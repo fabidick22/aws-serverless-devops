@@ -1,3 +1,18 @@
+# [1.2.0-beta.1](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0...v1.2.0-beta.1) (2020-10-14)
+
+### Bug Fixes
+
+- remove body parse ([249f9b0](https://github.com/fabidick22/aws-serverless-devops/commit/249f9b00305969619b3d59d0c60d765ba5bd7453))
+
+### Features
+
+- Add logs ([9ba9ca2](https://github.com/fabidick22/aws-serverless-devops/commit/9ba9ca24e66b539b8e69d531789726931f7e2ab6))
+- Add logs ([97eafc4](https://github.com/fabidick22/aws-serverless-devops/commit/97eafc44f9fbf92b8d4d0d21581291f1b77c8132))
+
+### Other
+
+- master to develop ([899697f](https://github.com/fabidick22/aws-serverless-devops/commit/899697fc61b955699cea8bec225981b01a7be5a2))
+
 # [1.1.0](https://github.com/fabidick22/aws-serverless-devops/compare/v1.0.0...v1.1.0) (2020-10-14)
 
 ### Bug Fixes
