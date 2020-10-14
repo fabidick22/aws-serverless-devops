@@ -1,3 +1,53 @@
+# [1.2.0-beta.6](https://github.com/fabidick22/aws-serverless-devops/compare/v1.2.0-beta.5...v1.2.0-beta.6) (2020-10-14)
+
+### Features
+
+- update response (get-data) ([15ab522](https://github.com/fabidick22/aws-serverless-devops/commit/15ab52205cea0c2d79c31ffc8cb0f940fa3b92ed))
+- update response (get-data) ([f90956f](https://github.com/fabidick22/aws-serverless-devops/commit/f90956fbb201735dd30ac9a0243c426c0fdfde2a))
+
+# [1.2.0-beta.5](https://github.com/fabidick22/aws-serverless-devops/compare/v1.2.0-beta.4...v1.2.0-beta.5) (2020-10-14)
+
+### Bug Fixes
+
+- Update get-data response (stage variable) ([272f6eb](https://github.com/fabidick22/aws-serverless-devops/commit/272f6eb76f72e070d365ceb12de030eace86be4e))
+- Update get-data response (stage variable) ([6dde69a](https://github.com/fabidick22/aws-serverless-devops/commit/6dde69a803b238e35c0761dae86e204eb4f01c2d))
+
+# [1.2.0-beta.4](https://github.com/fabidick22/aws-serverless-devops/compare/v1.2.0-beta.3...v1.2.0-beta.4) (2020-10-14)
+
+### Features
+
+- update response (get-data) ([c877d9f](https://github.com/fabidick22/aws-serverless-devops/commit/c877d9ffae9de46e1489ffbe8d9cd4fb8fb2b002))
+- update response (get-data) ([2888a42](https://github.com/fabidick22/aws-serverless-devops/commit/2888a421341fc509bf5268cd93402fa489180179))
+
+# [1.2.0-beta.3](https://github.com/fabidick22/aws-serverless-devops/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2020-10-14)
+
+### Features
+
+- Update get-data response ([4ae0b82](https://github.com/fabidick22/aws-serverless-devops/commit/4ae0b82c33756f3d126f5ab1d0bcfec0cf37910b))
+- Update get-data response ([dc40356](https://github.com/fabidick22/aws-serverless-devops/commit/dc40356b9416e500eafeda89d7a1ae6e36a2251c))
+
+# [1.2.0-beta.2](https://github.com/fabidick22/aws-serverless-devops/compare/v1.2.0-beta.1...v1.2.0-beta.2) (2020-10-14)
+
+### Bug Fixes
+
+- Update logs ([d55388f](https://github.com/fabidick22/aws-serverless-devops/commit/d55388fb1f7ad6815d84677757adbdc45a98c26c))
+- Update logs ([ae40727](https://github.com/fabidick22/aws-serverless-devops/commit/ae4072775b31fb4068e6e17c01dc0ad1d17b6cf4))
+
+# [1.2.0-beta.1](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0...v1.2.0-beta.1) (2020-10-14)
+
+### Bug Fixes
+
+- remove body parse ([249f9b0](https://github.com/fabidick22/aws-serverless-devops/commit/249f9b00305969619b3d59d0c60d765ba5bd7453))
+
+### Features
+
+- Add logs ([9ba9ca2](https://github.com/fabidick22/aws-serverless-devops/commit/9ba9ca24e66b539b8e69d531789726931f7e2ab6))
+- Add logs ([97eafc4](https://github.com/fabidick22/aws-serverless-devops/commit/97eafc44f9fbf92b8d4d0d21581291f1b77c8132))
+
+### Other
+
+- master to develop ([899697f](https://github.com/fabidick22/aws-serverless-devops/commit/899697fc61b955699cea8bec225981b01a7be5a2))
+
 # [1.1.0](https://github.com/fabidick22/aws-serverless-devops/compare/v1.0.0...v1.1.0) (2020-10-14)
 
 ### Bug Fixes
