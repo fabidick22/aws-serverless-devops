@@ -48,6 +48,12 @@ Resources:
       FunctionName: !Sub "${AWS::StackName}-saveMyDataFunction"
       CodeUri: src/handlers/save-data/
       Handler: app.lambdaHandler
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref MySimpleTableDB
+      Environment:
+        Variables:
+          DATA_TABLE: !Ref MySimpleTableDB
       Events:
         HelloWorld:
           Type: HttpApi
@@ -55,6 +61,17 @@ Resources:
             ApiId: !Ref ServerlessHTTPApi
             Path: /data
             Method: post
+
+  MySimpleTableDB:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: !Sub "my-data-${Environment}"
+      PrimaryKey:
+        Name: id
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 2
+        WriteCapacityUnits: 2
 
 Outputs:
   DataApi:
