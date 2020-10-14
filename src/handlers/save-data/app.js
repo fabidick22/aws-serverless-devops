@@ -4,7 +4,6 @@ const docClient = new dynamodb.DocumentClient();
 const tableName = process.env.DATA_TABLE;
 const crypto = require("crypto");
 
-
 exports.lambdaHandler = async (event, context) => {
     if (event.httpMethod !== 'POST') {
         throw new Error(`postMethod only accepts POST method, you tried: ${event.httpMethod} method.`);
