@@ -1,3 +1,16 @@
+# [1.1.0-beta.11](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.10...v1.1.0-beta.11) (2020-10-14)
+
+### Bug Fixes
+
+- add devDependencies ([ae86b97](https://github.com/fabidick22/aws-serverless-devops/commit/ae86b97df00f5685bf1f0c1a9751f83ef8aafe60))
+- bypass unit test (comment) ([8f1db57](https://github.com/fabidick22/aws-serverless-devops/commit/8f1db57a4dbd50fd220edb651bed12922a24412e))
+- bypass unit test (save-data) ([95986b5](https://github.com/fabidick22/aws-serverless-devops/commit/95986b5562c62632cb15d1d140bc3da0b6d40e60))
+
+### Features
+
+- Update save-data function ([cbe2fc3](https://github.com/fabidick22/aws-serverless-devops/commit/cbe2fc3ce352e7b04b8abd08b40bb5187bb751b1))
+- Update save-data function ([7c5381d](https://github.com/fabidick22/aws-serverless-devops/commit/7c5381d171ba312a4367c07d31dc0c73ddd5f1c1))
+
 # [1.1.0-beta.10](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.9...v1.1.0-beta.10) (2020-10-13)
 
 ### Bug Fixes
