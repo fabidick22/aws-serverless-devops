@@ -1,3 +1,10 @@
+# [1.1.0-beta.12](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.11...v1.1.0-beta.12) (2020-10-14)
+
+### Bug Fixes
+
+- remove bad condition ([f5ea019](https://github.com/fabidick22/aws-serverless-devops/commit/f5ea019e7601025d944762b4ec341a60bdb984fc))
+- remove bad condition ([80d4c10](https://github.com/fabidick22/aws-serverless-devops/commit/80d4c101dcb7f9f010b7498976748432e904ba09))
+
 # [1.1.0-beta.11](https://github.com/fabidick22/aws-serverless-devops/compare/v1.1.0-beta.10...v1.1.0-beta.11) (2020-10-14)
 
 ### Bug Fixes
