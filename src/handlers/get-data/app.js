@@ -8,7 +8,7 @@ exports.lambdaHandler = async (event, context) => {
         response = {
             'statusCode': 200,
             'body': JSON.stringify({
-                message: 'get data',
+                message: 'get data!',
                 location: requestContext.stage
             })
         }
